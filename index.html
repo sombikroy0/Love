@@ -319,10 +319,10 @@
         </div>
     </div>
 
-    <script>
+  <script>
     /* JAVASCRIPT LOGIC */
 
-    // 1. Pages Data Array
+    // 1. Pages Data Array (Single image/collage file per month)
     const pages = [
         {
             type: 'intro',
@@ -344,91 +344,91 @@
         },
         {
             month: 'Nov, 24',
-            media: ['photo_nov24_1.jpg', 'photo_nov24_2.jpg', 'photo_nov24_3.jpg'],
+            media: 'photo_nov24.jpg', // Your single collage file
             isVideo: false,
             content: "The very first time you rode on my bike wearing a saree... I was absolutely mesmerized. I couldn't take my eyes off you. We went on our first momo date, and in that quiet moment, I knew something truly beautiful had begun. ✨"
         },
         {
             month: 'Dec, 24',
-            media: ['photo_dec24_1.jpg', 'photo_dec24_2.jpg', 'photo_dec24_3.jpg'],
+            media: 'photo_dec24.jpg',
             isVideo: false,
             content: "We went on an unforgettable waffle date and visited Shyamnagar Ma Kali Mandir together. But the moment that stands out the most was after your exam. I stood outside in the overwhelming crowd, my eyes scanning every face, eagerly waiting just to catch a single glimpse of you. 🧇🛕"
         },
         {
             month: 'Jan, 25',
-            media: ['photo_jan25_1.jpg', 'photo_jan25_2.jpg', 'photo_jan25_3.jpg'],
+            media: 'photo_jan25.jpg',
             isVideo: false,
             content: "Our first New Year together! You were mad at me for drinking the night before, but I made sure to hold you close and gently calm your heart in the morning. When you shared your gorgeous photos on the first day of the year, my whole year brightened up. 🎆"
         },
         {
             month: 'Feb, 25',
-            media: ['photo_feb25_1.jpg', 'photo_feb25_2.jpg', 'photo_feb25_3.jpg'],
+            media: 'photo_feb25.jpg',
             isVideo: false,
             content: "On Saraswati Puja, as I wandered with friends seeing couples everywhere, my heart felt empty until you arrived at Barrackpore station. Hugging you tightly in front of the bustling crowd made everything else fade away. Later that month, you stunned everyone in that breathtaking blue saree at the wedding. And on the 26th, sharing our quiet, intimate time together at my place became a memory etched in my heart forever. 💙"
         },
         {
             month: 'Mar, 25',
-            media: ['photo_mar25_1.jpg', 'photo_mar25_2.jpg', 'photo_mar25_3.jpg'],
+            media: 'photo_mar25.jpg',
             isVideo: false,
             content: "The month of colors! I started my Holi by applying the very first splash of rang on you—a feeling so surreal and magical. Later, during our outing to Zakaria Street in your striking red churidar, you looked so incredibly beautiful that I couldn't stop staring at you all day. 🎨❤️"
         },
         {
             month: 'Apr, 25',
-            media: ['photo_apr25_1.jpg', 'photo_apr25_2.jpg', 'photo_apr25_3.jpg'],
+            media: 'photo_apr25.jpg',
             isVideo: false,
             content: "My birthday month, and you gave me the absolute best surprise of my life. We shared a level of raw, passionate intimacy that brought us closer than ever before, revealing a side of our bond that was as fierce as it was unforgettable. 🔥🎂"
         },
         {
             month: 'May, 25',
-            media: ['photo_may25_1.jpg', 'photo_may25_2.jpg', 'photo_may25_3.jpg'],
+            media: 'photo_may25.jpg',
             isVideo: false,
             content: "After a tense scare that turned out to be a false alarm, we celebrated with pure relief and joy. We enjoyed Ujjal Da's Biryani, and later, as you fell asleep peacefully on my chest, I just laid there looking at you for hours—knowing with total certainty that I had made the best choice of my life. 🍛💤"
         },
         {
             month: 'Jun, 25',
-            media: ['photo_jun25_1.jpg', 'photo_jun25_2.jpg', 'photo_jun25_3.jpg'],
+            media: 'photo_jun25.jpg',
             isVideo: false,
             content: "You rushed out wearing a stunning blue churidar to head over to your friend's place. As I dropped you off, I was completely captivated by your effortless beauty and grace. You left me utterly breathless. 💙✨"
         },
         {
             month: 'Jul, 25',
-            media: ['photo_jul25_1.jpg', 'photo_jul25_2.jpg', 'photo_jul25_3.jpg'],
+            media: 'photo_jul25.jpg',
             isVideo: false,
             content: "Our very first movie date watching 'Metro... In Dino'. Watching you was even better than the movie itself—I found myself smiling whenever you smiled and feeling every emotion you felt. Being wrapped up in your world was pure magic. 🎬🍿"
         },
         {
             month: 'Aug, 25',
-            media: ['photo_aug25_1.jpg', 'photo_aug25_2.jpg', 'photo_aug25_3.jpg'],
+            media: 'photo_aug25.jpg',
             isVideo: false,
             content: "Getting caught in the pouring rain on our way home... Getting completely drenched side by side with you brought a simple, unforgettable romance that I will treasure forever. 🌧️☔"
         },
         {
             month: 'Sep, 25',
-            media: ['photo_sep25_1.jpg', 'photo_sep25_2.jpg', 'photo_sep25_3.jpg'],
+            media: 'photo_sep25.jpg',
             isVideo: false,
             content: "Durga Puja shopping adventures! We bought purses, hair clips, and wore matching white outfits. On Astomi (Sept 30th), dressed in green and purple saree, you looked breathtaking. Standing beside you made me realize just how deeply I need you in my life—together, we felt unstoppable. 🌺🛍️"
         },
         {
             month: 'Oct, 25',
-            media: ['photo_oct25_1.jpg', 'photo_oct25_2.jpg', 'photo_oct25_3.jpg'],
+            media: 'photo_oct25.jpg',
             isVideo: false,
             content: "On Nabami, we explored the pandals again, soaking in the festive energy and lingering in each other's company. Wandering together after Diwali made the festive season feel truly complete. 🪔✨"
         },
         {
             month: 'Nov, 25',
-            media: ['photo_nov25_1.jpg', 'photo_nov25_2.jpg', 'photo_nov25_3.jpg'],
+            media: 'photo_nov25.jpg',
             isVideo: false,
             content: "We faced our first heavy argument this month. It was a dark, difficult storm to weather, but going through it reminded us of how resilient our love truly is. 🌧️🖤"
         },
         {
             month: 'Dec, 25',
-            media: ['video_dec25.mp4'],
+            media: 'video_dec25.mp4',
             isVideo: true,
             content: "Words aren't enough for this month, so I put together a video capturing the warmth and laughter of our special moments together. 🎥💖"
         },
         {
             month: 'Jan, 26',
-            media: ['photo_jan26_1.jpg', 'photo_jan26_2.jpg', 'photo_jan26_3.jpg'],
+            media: 'photo_jan26.jpg',
             isVideo: false,
             content: "A brand new year, starting with fresh promises and deeper commitments. And true to your sweet nature, you made sure your face was the very first thing I saw on New Year's morning. 🌅❤️"
         }
@@ -451,7 +451,7 @@
         renderPage();
     }
 
-    // 3. Render Page Logic
+    // 3. Render Page Logic (Single media on Left, Text on Right)
     function renderPage() {
         const pageData = pages[currentPageIndex];
         const pageContainer = document.getElementById('page-render');
@@ -471,37 +471,28 @@
                 </div>
                 ${pageData.content}
             `;
-        } else if (pageData.isVideo) {
-            pageContainer.innerHTML = `
-                <div class="page-header">
-                    <h2>🗓️ ${pageData.month}</h2>
-                </div>
-                <div class="page-body">
+        } else {
+            let mediaHTML = '';
+            if (pageData.isVideo) {
+                mediaHTML = `
                     <div class="media-container">
                         <video controls autoplay muted loop style="width:100%; height:100%; object-fit:cover;">
-                            <source src="${pageData.media[0]}" type="video/mp4">
+                            <source src="${pageData.media}" type="video/mp4">
                         </video>
-                    </div>
-                    <div class="page-content">
-                        <p>${pageData.content}</p>
-                    </div>
-                </div>
-            `;
-        } else {
-            let imagesHTML = '';
-            const images = pageData.media || [];
-            images.forEach((imgSrc, idx) => {
-                imagesHTML += `<img src="${imgSrc}" class="collage-image collage-${idx + 1}" alt="Memory ${idx + 1}" onerror="this.style.display='none'">`;
-            });
+                    </div>`;
+            } else {
+                mediaHTML = `
+                    <div class="media-container">
+                        <img src="${pageData.media}" alt="${pageData.month}">
+                    </div>`;
+            }
 
             pageContainer.innerHTML = `
                 <div class="page-header">
                     <h2>🗓️ ${pageData.month}</h2>
                 </div>
                 <div class="page-body">
-                    <div class="collage-container">
-                        ${imagesHTML}
-                    </div>
+                    ${mediaHTML}
                     <div class="page-content">
                         <p>${pageData.content}</p>
                     </div>
@@ -564,7 +555,7 @@
 
     setInterval(createHeart, 400);
 
-    // 6. Explicit Event Listener Bindings for Touch and Click
+    // 6. Explicit Touch/Click Event Bindings
     document.addEventListener('DOMContentLoaded', () => {
         const giftBox = document.querySelector('.gift-box');
         if (giftBox) {
