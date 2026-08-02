@@ -51,7 +51,7 @@
         .screen {
             display: none;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px; /* Increased max-width for collage */
             z-index: 10;
             animation: fadeIn 0.8s ease-in-out forwards;
         }
@@ -98,8 +98,8 @@
             background: var(--paper-bg);
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            padding: 30px;
-            min-height: 520px;
+            padding: 40px; /* Increased padding */
+            min-height: 600px; /* Increased min-height for content */
             position: relative;
             display: flex;
             flex-direction: column;
@@ -107,164 +107,153 @@
             border: 2px solid #eae2d6;
         }
 
-        /* Intro Page Styling with Custom Backgrounds */
+        /* Page Layout: Two Columns */
+        .page-body {
+            display: flex;
+            gap: 30px; /* Increased gap */
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        /* Left Side: Collage Container */
+        .collage-container {
+            flex: 0 0 50%; /* Set to 50% width */
+            position: relative;
+            aspect-ratio: 1 / 1; /* Keep collage area square for consistency */
+            /* Removed fixed height, let content dictate */
+        }
+
+        /* Right Side: Text Content */
+        .page-content {
+            flex: 1; /* Takes remaining width */
+            font-size: 1.15rem; /* Increased size slightly */
+            line-height: 1.8;
+            color: var(--text-color);
+            text-align: left;
+            margin-top: 10px; /* Small top margin for spacing */
+        }
+
+        /* Portrait Media Container for Solo Images or Video */
+        .media-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #f0f0f0;
+            position: relative; /* Necessary for aspect ratio on video */
+            aspect-ratio: 9 / 16; /* Define portrait ratio explicitly */
+        }
+
+        .media-container img, 
+        .media-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Intro Page Styling */
         .page-intro {
             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('photo_bg1.jpg');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
-            padding: 20px;
+            padding: 30px;
+            width: 100%; /* Force intro full width */
         }
 
         .page-header {
             text-align: center;
             border-bottom: 2px dashed var(--secondary);
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--primary);
+            font-size: 1.5rem;
         }
 
-        .page-content {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .media-container {
-            width: 100%;
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .media-container img, .media-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation Buttons */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-
-        .btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(255, 77, 109, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #e03a58;
-            transform: translateY(-2deg);
-        }
-
-        .btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
-        }
-
-        /* Screen 3: Proposal Screen */
-        .proposal-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: relative;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .proposal-card h2 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-
-        .proposal-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            min-height: 80px;
-        }
-
-        .btn-yes {
-            background: #2ec4b6;
-            box-shadow: 0 4px 12px rgba(46, 196, 182, 0.4);
-            z-index: 2;
-        }
-
-        .btn-yes:hover {
-            background: #259b90;
-        }
-
-        .btn-no {
-            background: #e63946;
+        /* Collage Layout Classes */
+        .collage-image {
             position: absolute;
-            transition: all 0.15s ease;
-            z-index: 10;
+            width: 50%; /* Default width for collage images */
+            height: 50%; /* Default height */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #eee;
         }
 
-        /* Screen 4: Final Long Message */
-        .letter-card {
-            background: var(--paper-bg);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            max-height: 80vh;
-            overflow-y: auto;
-            border-left: 5px solid var(--primary);
+        /* Image 1: Small square, top-left */
+        .collage-1 {
+            top: 0;
+            left: 0;
         }
 
-        .letter-card h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 2rem;
+        /* Image 2: Small square, top-right */
+        .collage-2 {
+            top: 0;
+            right: 0;
         }
 
-        .letter-content p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 18px;
-            color: var(--text-color);
-            text-align: justify;
+        /* Image 3: Small square, center-left */
+        .collage-3 {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%); /* Center horizontally */
         }
 
-        /* Responsive tweaks */
-        @media (max-width: 600px) {
-            .welcome-card h1 { font-size: 1.8rem; }
-            .book-container { padding: 20px; min-height: 480px; }
-            .media-container { height: 200px; }
-            .btn { padding: 10px 18px; font-size: 0.9rem; }
-            .letter-card { padding: 20px; }
+        /* Image 4: Small square, center-right */
+        .collage-4 {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        /* Image 5: Medium square, bottom-center */
+        .collage-5 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Center vertically */
+            width: 60%; /* Slightly larger */
+            height: 60%;
+        }
+
+        /* Small placeholder text within collage images if not loaded */
+        .collage-image:after {
+            content: "IMG";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            color: #999;
+        }
+
+        /* Responsive adjustments for mobile screens */
+        @media (max-width: 768px) {
+            .book-container { padding: 25px; }
+            .page-body {
+                flex-direction: column; /* Stack vertically */
+                gap: 20px;
+            }
+            .collage-container, .media-container {
+                width: 100%;
+                aspect-ratio: auto; /* Reset square aspect ratio for stacking */
+                position: relative; /* Reset absolute positioning needs */
+                height: 300px; /* Give it some height when stacked */
+                display: flex;
+                flex-wrap: wrap; /* Allow collage images to flow */
+                gap: 5px; /* Add gap between stacked collage images */
+            }
+            .collage-image {
+                position: relative; /* Revert position for stacking */
+                transform: none; /* Revert centering */
+                top: auto; left: auto; right: auto; bottom: auto;
+                width: calc(33.33% - 5px); /* Size images for 3xN grid on mobile */
+                height: 90px;
+            }
+            .page-content {
+                text-align: center;
+                margin-top: 0;
+            }
         }
     </style>
 </head>
@@ -333,117 +322,117 @@
     <script>
         /* JAVASCRIPT LOGIC */
 
-       // Updated Pages Array with Refined Content
-const pages = [
-    {
-        type: 'intro',
-        title: 'About My Special Girl ✨',
-        bgImage: 'photo_bg1.jpg',
-        content: `
-            <div class="page-intro">
-                <p style="font-size: 1.15rem; font-style: italic; font-weight: bold; color: var(--primary); margin-bottom: 10px;">
-                    Hey Honey,
-                </p>
-                <p>
-                    You are truly a blessing given to me by God. I know I have stumbled and failed many times to express my love, care, and respect the way you deserve. There were moments I failed to love you right, but through it all, you held onto me as if I were your entire world.
-                </p>
-                <p style="margin-top: 10px;">
-                    You became my grace, my strength, and my home. Thank you for never giving up on us, my sweet Cupcake. 💖
-                </p>
-            </div>
-        `
-    },
-    {
-        month: 'Nov, 24',
-        media: 'photo_nov24.jpg',
-        isVideo: false,
-        content: "The very first time you rode on my bike wearing a saree... I was absolutely mesmerized. I couldn't take my eyes off you. We went on our first momo date, and in that quiet moment, I knew something truly beautiful had begun. ✨"
-    },
-    {
-        month: 'Dec, 24',
-        media: 'photo_dec24.jpg',
-        isVideo: false,
-        content: "We went on an unforgettable waffle date and visited Shyamnagar Ma Kali Mandir together. But the moment that stands out the most was after your exam. I stood outside in the overwhelming crowd, my eyes scanning every face, eagerly waiting just to catch a single glimpse of you. 🧇🛕"
-    },
-    {
-        month: 'Jan, 25',
-        media: 'photo_jan25.jpg',
-        isVideo: false,
-        content: "Our first New Year together! You were mad at me for drinking the night before, but I made sure to hold you close and gently calm your heart in the morning. When you shared your gorgeous photos on the first day of the year, my whole year brightened up. 🎆"
-    },
-    {
-        month: 'Feb, 25',
-        media: 'photo_feb25.jpg',
-        isVideo: false,
-        content: "On Saraswati Puja, as I wandered with friends seeing couples everywhere, my heart felt empty until you arrived at Barrackpore station. Hugging you tightly in front of the bustling crowd made everything else fade away. Later that month, you stunned everyone in that breathtaking blue saree at the wedding. And on the 26th, sharing our quiet, intimate time together at my place became a memory etched in my heart forever. 💙"
-    },
-    {
-        month: 'Mar, 25',
-        media: 'photo_mar25.jpg',
-        isVideo: false,
-        content: "The month of colors! I started my Holi by applying the very first splash of rang on you—a feeling so surreal and magical. Later, during our outing to Zakaria Street in your striking red churidar, you looked so incredibly beautiful that I couldn't stop staring at you all day. 🎨❤️"
-    },
-    {
-        month: 'Apr, 25',
-        media: 'photo_apr25.jpg',
-        isVideo: false,
-        content: "My birthday month, and you gave me the absolute best surprise of my life. We shared a level of raw, passionate intimacy that brought us closer than ever before, revealing a side of our bond that was as fierce as it was unforgettable. 🔥🎂"
-    },
-    {
-        month: 'May, 25',
-        media: 'photo_may25.jpg',
-        isVideo: false,
-        content: "After a tense scare that turned out to be a false alarm, we celebrated with pure relief and joy. We enjoyed Ujjal Da's Biryani, and later, as you fell asleep peacefully on my chest, I just laid there looking at you for hours—knowing with total certainty that I had made the best choice of my life. 🍛💤"
-    },
-    {
-        month: 'Jun, 25',
-        media: 'photo_jun25.jpg',
-        isVideo: false,
-        content: "You rushed out wearing a stunning blue churidar to head over to your friend's place. As I dropped you off, I was completely captivated by your effortless beauty and grace. You left me utterly breathless. 💙✨"
-    },
-    {
-        month: 'Jul, 25',
-        media: 'photo_jul25.jpg',
-        isVideo: false,
-        content: "Our very first movie date watching 'Metro... In Dino'. Watching you was even better than the movie itself—I found myself smiling whenever you smiled and feeling every emotion you felt. Being wrapped up in your world was pure magic. 🎬🍿"
-    },
-    {
-        month: 'Aug, 25',
-        media: 'photo_aug25.jpg',
-        isVideo: false,
-        content: "Getting caught in the pouring rain on our way home... Getting completely drenched side by side with you brought a simple, unforgettable romance that I will treasure forever. 🌧️☔"
-    },
-    {
-        month: 'Sep, 25',
-        media: 'photo_sep25.jpg',
-        isVideo: false,
-        content: "Durga Puja shopping adventures! We bought purses, hair clips, and wore matching white outfits. On Astomi (Sept 30th), dressed in green and purple saree, you looked breathtaking. Standing beside you made me realize just how deeply I need you in my life—together, we felt unstoppable. 🌺🛍️"
-    },
-    {
-        month: 'Oct, 25',
-        media: 'photo_oct25.jpg',
-        isVideo: false,
-        content: "On Nabami, we explored the pandals again, soaking in the festive energy and lingering in each other's company. Wandering together after Diwali made the festive season feel truly complete. 🪔✨"
-    },
-    {
-        month: 'Nov, 25',
-        media: 'photo_nov25.jpg',
-        isVideo: false,
-        content: "We faced our first heavy argument this month. It was a dark, difficult storm to weather, but going through it reminded us of how resilient our love truly is. 🌧️🖤"
-    },
-    {
-        month: 'Dec, 25',
-        media: 'video_dec25.mp4',
-        isVideo: true,
-        content: "Words aren't enough for this month, so I put together a video capturing the warmth and laughter of our special moments together. 🎥💖"
-    },
-    {
-        month: 'Jan, 26',
-        media: 'photo_jan26.jpg',
-        isVideo: false,
-        content: "A brand new year, starting with fresh promises and deeper commitments. And true to your sweet nature, you made sure your face was the very first thing I saw on New Year's morning. 🌅❤️"
-    }
-];
+        // 1. Updated Pages Array with Refined Content AND Multiple Images
+        const pages = [
+            {
+                type: 'intro',
+                title: 'About My Special Girl ✨',
+                bgImage: 'photo_bg1.jpg',
+                content: `
+                    <div class="page-intro">
+                        <p style="font-size: 1.15rem; font-style: italic; font-weight: bold; color: var(--primary); margin-bottom: 10px;">
+                            Hey Honey,
+                        </p>
+                        <p>
+                            You are truly a blessing given to me by God. I know I have stumbled and failed many times to express my love, care, and respect the way you deserve. There were moments I failed to love you right, but through it all, you held onto me as if I were your entire world.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            You became my grace, my strength, and my home. Thank you for never giving up on us, my sweet Cupcake. 💖
+                        </p>
+                    </div>
+                `
+            },
+            {
+                month: 'Nov, 24',
+                media: ['photo_nov24_1.jpg', 'photo_nov24_2.jpg', 'photo_nov24_3.jpg', 'photo_nov24_4.jpg', 'photo_nov24_5.jpg'], // Multiple images for collage
+                isVideo: false,
+                content: "The very first time you rode on my bike wearing a saree... I was absolutely mesmerized. I couldn't take my eyes off you. We went on our first momo date, and in that quiet moment, I knew something truly beautiful had begun. ✨"
+            },
+            {
+                month: 'Dec, 24',
+                media: ['photo_dec24_1.jpg', 'photo_dec24_2.jpg', 'photo_dec24_3.jpg'],
+                isVideo: false,
+                content: "We went on an unforgettable waffle date and visited Shyamnagar Ma Kali Mandir together. But the moment that stands out the most was after your exam. I stood outside in the overwhelming crowd, my eyes scanning every face, eagerly waiting just to catch a single glimpse of you. 🧇🛕"
+            },
+            {
+                month: 'Jan, 25',
+                media: ['photo_jan25_1.jpg', 'photo_jan25_2.jpg', 'photo_jan25_3.jpg', 'photo_jan25_4.jpg'],
+                isVideo: false,
+                content: "Our first New Year together! You were mad at me for drinking the night before, but I made sure to hold you close and gently calm your heart in the morning. When you shared your gorgeous photos on the first day of the year, my whole year brightened up. 🎆"
+            },
+            {
+                month: 'Feb, 25',
+                media: ['photo_feb25_1.jpg', 'photo_feb25_2.jpg', 'photo_feb25_3.jpg', 'photo_feb25_4.jpg', 'photo_feb25_5.jpg'],
+                isVideo: false,
+                content: "On Saraswati Puja, as I wandered with friends seeing couples everywhere, my heart felt empty until you arrived at Barrackpore station. Hugging you tightly in front of the bustling crowd made everything else fade away. Later that month, you stunned everyone in that breathtaking blue saree at the wedding. And on the 26th, sharing our quiet, intimate time together at my place became a memory etched in my heart forever. 💙"
+            },
+            {
+                month: 'Mar, 25',
+                media: ['photo_mar25_1.jpg', 'photo_mar25_2.jpg', 'photo_mar25_3.jpg'],
+                isVideo: false,
+                content: "The month of colors! I started my Holi by applying the very first splash of rang on you—a feeling so surreal and magical. Later, during our outing to Zakaria Street in your striking red churidar, you looked so incredibly beautiful that I couldn't stop staring at you all day. 🎨❤️"
+            },
+            {
+                month: 'Apr, 25',
+                media: ['photo_apr25_1.jpg', 'photo_apr25_2.jpg', 'photo_apr25_3.jpg', 'photo_apr25_4.jpg'],
+                isVideo: false,
+                content: "My birthday month, and you gave me the absolute best surprise of my life. We shared a level of raw, passionate intimacy that brought us closer than ever before, revealing a side of our bond that was as fierce as it was unforgettable. 🔥🎂"
+            },
+            {
+                month: 'May, 25',
+                media: ['photo_may25_1.jpg', 'photo_may25_2.jpg', 'photo_may25_3.jpg', 'photo_may25_4.jpg', 'photo_may25_5.jpg'],
+                isVideo: false,
+                content: "After a tense scare that turned out to be a false alarm, we celebrated with pure relief and joy. We enjoyed Ujjal Da's Biryani, and later, as you fell asleep peacefully on my chest, I just laid there looking at you for hours—knowing with total certainty that I had made the best choice of my life. 🍛💤"
+            },
+            {
+                month: 'Jun, 25',
+                media: ['photo_jun25_1.jpg', 'photo_jun25_2.jpg', 'photo_jun25_3.jpg'],
+                isVideo: false,
+                content: "You rushed out wearing a stunning blue churidar to head over to your friend's place. As I dropped you off, I was completely captivated by your effortless beauty and grace. You left me utterly breathless. 💙✨"
+            },
+            {
+                month: 'Jul, 25',
+                media: ['photo_jul25_1.jpg', 'photo_jul25_2.jpg', 'photo_jul25_3.jpg', 'photo_jul25_4.jpg'],
+                isVideo: false,
+                content: "Our very first movie date watching 'Metro... In Dino'. Watching you was even better than the movie itself—I found myself smiling whenever you smiled and feeling every emotion you felt. Being wrapped up in your world was pure magic. 🎬🍿"
+            },
+            {
+                month: 'Aug, 25',
+                media: ['photo_aug25_1.jpg', 'photo_aug25_2.jpg', 'photo_aug25_3.jpg'],
+                isVideo: false,
+                content: "Getting caught in the pouring rain on our way home... Getting completely drenched side by side with you brought a simple, unforgettable romance that I will treasure forever. 🌧️☔"
+            },
+            {
+                month: 'Sep, 25',
+                media: ['photo_sep25_1.jpg', 'photo_sep25_2.jpg', 'photo_sep25_3.jpg', 'photo_sep25_4.jpg', 'photo_sep25_5.jpg'],
+                isVideo: false,
+                content: "Durga Puja shopping adventures! We bought purses, hair clips, and wore matching white outfits. On Astomi (Sept 30th), dressed in green and purple saree, you looked breathtaking. Standing beside you made me realize just how deeply I need you in my life—together, we felt unstoppable. 🌺🛍️"
+            },
+            {
+                month: 'Oct, 25',
+                media: ['photo_oct25_1.jpg', 'photo_oct25_2.jpg', 'photo_oct25_3.jpg'],
+                isVideo: false,
+                content: "On Nabami, we explored the pandals again, soaking in the festive energy and lingering in each other's company. Wandering together after Diwali made the festive season feel truly complete. 🪔✨"
+            },
+            {
+                month: 'Nov, 25',
+                media: ['photo_nov25_1.jpg', 'photo_nov25_2.jpg', 'photo_nov25_3.jpg'],
+                isVideo: false,
+                content: "We faced our first heavy argument this month. It was a dark, difficult storm to weather, but going through it reminded us of how resilient our love truly is. 🌧️🖤"
+            },
+            {
+                month: 'Dec, 25',
+                media: ['video_dec25.mp4'], // Video path in an array
+                isVideo: true,
+                content: "Words aren't enough for this month, so I put together a video capturing the warmth and laughter of our special moments together. 🎥💖"
+            },
+            {
+                month: 'Jan, 26',
+                media: ['photo_jan26_1.jpg', 'photo_jan26_2.jpg', 'photo_jan26_3.jpg', 'photo_jan26_4.jpg'],
+                isVideo: false,
+                content: "A brand new year, starting with fresh promises and deeper commitments. And true to your sweet nature, you made sure your face was the very first thing I saw on New Year's morning. 🌅❤️"
+            }
+        ];
 
         let currentPageIndex = 0;
 
@@ -458,7 +447,7 @@ const pages = [
             renderPage();
         }
 
-        // 3. Render Book Pages
+        // 3. Render Book Pages with Collage Structure
         function renderPage() {
             const pageData = pages[currentPageIndex];
             const pageContainer = document.getElementById('page-render');
@@ -466,99 +455,10 @@ const pages = [
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
 
-            indicator.innerText = `${currentPageIndex + 1} / ${pages.length}`;
+            indicator.innerText = `${currentPageIndex + 1} /${pages.length}`;
             prevBtn.disabled = currentPageIndex === 0;
 
             if (pageData.type === 'intro') {
                 pageContainer.innerHTML = `
                     <div class="page-header">
-                        <h2>${pageData.title}</h2>
-                    </div>
-                    ${pageData.content}
-                `;
-            } else {
-                let mediaHTML = '';
-                if (pageData.isVideo) {
-                    mediaHTML = `
-                        <div class="media-container">
-                            <video controls autoplay muted loop>
-                                <source src="${pageData.media}" type="video/mp4">
-                                Your browser does not support video playback.
-                            </video>
-                        </div>`;
-                } else {
-                    mediaHTML = `
-                        <div class="media-container">
-                            <img src="${pageData.media}" alt="${pageData.month}" onerror="this.src='https://via.placeholder.com/600x400?text=Photo+for+${encodeURIComponent(pageData.month)}'">
-                        </div>`;
-                }
-
-                pageContainer.innerHTML = `
-                    <div class="page-header">
-                        <h2>🗓️ ${pageData.month}</h2>
-                    </div>
-                    ${mediaHTML}
-                    <div class="page-content">
-                        <p>${pageData.content}</p>
-                    </div>
-                `;
-            }
-
-            // Button label change for final page
-            if (currentPageIndex === pages.length - 1) {
-                nextBtn.innerText = "To The End ❤️";
-            } else {
-                nextBtn.innerText = "Next →";
-            }
-        }
-
-        function nextPage() {
-            if (currentPageIndex < pages.length - 1) {
-                currentPageIndex++;
-                renderPage();
-            } else {
-                showScreen('screen-proposal');
-            }
-        }
-
-        function prevPage() {
-            if (currentPageIndex > 0) {
-                currentPageIndex--;
-                renderPage();
-            }
-        }
-
-        // 4. Playful Dodge "No" Button
-        function dodgeNo() {
-            const noBtn = document.getElementById('no-btn');
-            // Random positions inside proposal actions area
-            const x = Math.floor(Math.random() * 200) - 100;
-            const y = Math.floor(Math.random() * 150) - 75;
-            
-            noBtn.style.transform = `translate(${x}px, ${y}px)`;
-        }
-
-        // 5. Accept Proposal Action
-        function acceptProposal() {
-            showScreen('screen-letter');
-        }
-
-        // 6. Floating Hearts Animation Background
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-particle');
-            heart.innerHTML = ['❤️', '💖', '🌸', '✨', '💕'][Math.floor(Math.random() * 5)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            
-            document.getElementById('heart-container').appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-
-        setInterval(createHeart, 400);
-    </script>
-</body>
-</html>
+                        <h2>${pageData.title}
